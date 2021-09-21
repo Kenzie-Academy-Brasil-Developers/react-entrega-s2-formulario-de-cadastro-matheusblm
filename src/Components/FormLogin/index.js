@@ -5,6 +5,7 @@ import * as yup from "yup";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { motion } from "framer-motion";
 
 function FormLogin({ setUser, setAuto }) {
   const history = useHistory();
@@ -45,20 +46,25 @@ function FormLogin({ setUser, setAuto }) {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+    >
       <Box
         component="form"
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: 400,
+          width: 300,
           height: 400,
           mx: "auto",
           alignItems: "center",
           alignContent: "center",
           backgroundColor: "#FBFAF8",
-          "& > :not(style)": { m: 1, width: "25ch" },
-          borderRadius: 16,
+          "& > :not(style)": { m: 1, width: "20ch" },
+          borderRadius: 10,
           boxShadow: 3,
         }}
         xs={5}
@@ -111,7 +117,7 @@ function FormLogin({ setUser, setAuto }) {
           Entrar
         </Button>
       </Box>
-    </>
+    </motion.div>
   );
 }
 

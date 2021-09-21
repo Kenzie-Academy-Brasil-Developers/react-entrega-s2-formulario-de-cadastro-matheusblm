@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import Box from "@mui/material/Box";
 import "./index.css";
 import Button from "@mui/material/Button";
+import { motion } from "framer-motion";
 const Welcome = ({ user, setAuto }) => {
   const history = useHistory();
   const back = () => {
@@ -9,11 +10,16 @@ const Welcome = ({ user, setAuto }) => {
     history.push("/");
   };
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column" },
           alignItems: "center",
           bgcolor: "background.paper",
           overflow: "hidden",
@@ -24,7 +30,6 @@ const Welcome = ({ user, setAuto }) => {
           width: 200,
           height: 200,
           justifyContent: "center",
-          flexDirection: "column",
         }}
         id="principal"
       >
@@ -33,7 +38,7 @@ const Welcome = ({ user, setAuto }) => {
           Voltar
         </Button>
       </Box>
-    </>
+    </motion.div>
   );
 };
 
