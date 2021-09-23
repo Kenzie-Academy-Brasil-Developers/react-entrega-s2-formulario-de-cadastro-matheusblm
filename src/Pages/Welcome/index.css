@@ -5,6 +5,9 @@
   transform: translate(-50%, -50%);
   font-size: 14px;
   background-color: #fbfaf8;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
 #buttonBack {
@@ -14,4 +17,13 @@
 
 form {
   margin-top: 50px;
+  justify-content: space-around;
+}
+
+#bigContainer {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
 }

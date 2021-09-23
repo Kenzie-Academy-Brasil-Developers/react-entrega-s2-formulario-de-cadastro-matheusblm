@@ -51,6 +51,7 @@ function FormLogin({ setUser, setAuto }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
+      id="bigContainer"
     >
       <Box
         component="form"
